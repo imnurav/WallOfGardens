@@ -18,3 +18,17 @@ def Home(request):
         # 'profile': profile
     }
     return render(request, 'home.html', context)
+def shop(request):
+    products = Product.objects.all().filter(
+        is_available=True).order_by('created_date')
+    # profile = UserProfile.objects.get_or_create(user_id=request.user.id)[0]
+    for product in products:
+        reviews = ReviewRating.objects.filter(
+            product_id=product.id, status=True)
+    context = {
+        'products': products,
+        'reviews': reviews,
+        # 'profile': profile
+    }
+    return render(request, 'shop.html', context)
+

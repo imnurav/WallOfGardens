@@ -27,7 +27,7 @@ SECRET_KEY = 'yy!7043(*xia=30u-0tdg@$-cs46vn4@jiavdk91u1z-34pg2j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default='True', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wallofgardenenv.eba-tgcrmab4.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'carts',
     'orders',
     'admin_honeypot',
+    'contact',
 
 
 ]

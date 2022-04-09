@@ -1,35 +1,28 @@
 {%load static%}
-
-
-
-
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgb(58, 78, 22)!important;">
   <div class="container">
-
     <a class="navbar-brand" href="{%url 'home'%}">WallOfGardens</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto ">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact Us</a>
+        </li> -->
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="{%  url 'shop' %}">Shop</a>
         </li>
         <li class="nav-item d-block d-sm-none">
           <a class="nav-link" href="#">Cart<span class="text-danger">({{cart_count}})</span></a>
         </li>
-
-
         <!-- NEED TO CHECK -->
         <!-- {%if profile.profile_picture%}
         <img src="{{profile.profile_picture.url}}" width="50" style="border-radius: 50%;" alt="Profile Picture">
@@ -38,9 +31,6 @@
           alt="Profile Picture">
         {%endif%} -->
         <!-- NEED TO CHECK -->
-
-
-
         {%if user.id is None%}
         <div class="widget-header">
           <small class="title text-muted">Welcome guest!</small>
@@ -51,8 +41,6 @@
           </div>
         </div>
         {%else%}
-
-
         <li class="nav-item dropdown" style="margin-top: -10px;">
 
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -65,9 +53,6 @@
             <a class="dropdown-item" href="{%url 'logout'%}">Logout</a>
         </li>
         {%endif%}
-
-
-
       </ul>
     </div>
 
